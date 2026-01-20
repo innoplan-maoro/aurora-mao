@@ -37,6 +37,7 @@ dnf5 remove -y \
 #systemctl enable podman.socket
 
 # edge policies
+mkdir -p /etc/opt/edge/policies/managed
 cat <<EOF > /etc/opt/edge/policies/managed/policies.json
 {
   "HideFirstRunExperience": true,
