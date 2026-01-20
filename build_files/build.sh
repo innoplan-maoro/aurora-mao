@@ -10,10 +10,9 @@ set -ouex pipefail
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/43/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # teamviewer
-wget -O /tmp/teamviewer.asc https://linux.teamviewer.com/pubkey/currentkey.asc
-rpm --import /tmp/teamviewer.asc
-rm -f /tmp/teamviewer.asc
-dnf5 install -y https://download.teamviewer.com/download/linux/teamviewer.x86_64.rpm
+rpm --import https://linux.teamviewer.com/pubkey/currentkey.asc && \
+dnf5 install -y https://download.teamviewer.com/download/linux/teamviewer.x86_64.rpm && \
+/usr/sbin/teamviewer daemon enable
 
 # install packages from fedora repos
 dnf5 install -y \
@@ -70,3 +69,7 @@ cat <<EOF > /etc/opt/edge/policies/managed/policies.json
   "EdgeHistoryAISearchEnabled": false
 }
 EOF
+
+# clean up
+dnf5 autoremove -y
+dnf5 clean -y all
