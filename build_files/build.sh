@@ -28,6 +28,7 @@ dnf5 install -y https://download.teamviewer.com/download/linux/teamviewer.x86_64
 # install packages from fedora repos
 dnf5 install -y \
     krdc \
+    wireshark
 
 # layer extra packages
 rpm-ostree install -y \
