@@ -50,7 +50,7 @@ dnf5 remove -y \
 # dnf5 -y copr disable ublue-os/staging
 
 # disable repos
-sed -i 's@enabled=1@enabled=0@g' "/etc/yum.repos.d/netbird.repo"
+#sed -i 's@enabled=1@enabled=0@g' "/etc/yum.repos.d/netbird.repo"
 
 
 #### Example for enabling a System Unit File
