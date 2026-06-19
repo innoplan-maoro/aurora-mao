@@ -10,15 +10,15 @@ set -ouex pipefail
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/43/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # enable repos
-tee /etc/yum.repos.d/netbird.repo <<EOF
-[netbird]
-name=netbird
-baseurl=https://pkgs.netbird.io/yum/
-enabled=1
-gpgcheck=0
-gpgkey=https://pkgs.netbird.io/yum/repodata/repomd.xml.key
-repo_gpgcheck=1
-EOF
+#tee /etc/yum.repos.d/netbird.repo <<EOF
+#[netbird]
+#name=netbird
+#baseurl=https://pkgs.netbird.io/yum/
+#enabled=1
+#gpgcheck=0
+#gpgkey=https://pkgs.netbird.io/yum/repodata/repomd.xml.key
+#repo_gpgcheck=1
+#EOF
 
 # teamviewer
 rpm --import https://linux.teamviewer.com/pubkey/currentkey.asc && \
@@ -28,12 +28,13 @@ dnf5 install -y https://download.teamviewer.com/download/linux/teamviewer.x86_64
 # install packages from fedora repos
 dnf5 install -y \
     krdc \
+    pipewire-module-roc \
     wireshark
 
 # layer extra packages
-rpm-ostree install -y \
-    netbird \
-    netbird-ui
+#rpm-ostree install -y \
+#    netbird \
+#    netbird-ui
 
 # remove pre-installed packages
 dnf5 remove -y \
