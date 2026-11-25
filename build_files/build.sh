@@ -26,7 +26,7 @@ dnf5 install -y https://download.teamviewer.com/download/linux/teamviewer.x86_64
 /usr/sbin/teamviewer daemon enable
 
 # OpenLogi
-rpm-ostree install -y https://github.com/AprilNEA/OpenLogi/releases/download/v0.9.0/openlogi-v0.9.0-linux-amd64.rpm
+#rpm-ostree install -y https://github.com/AprilNEA/OpenLogi/releases/download/v0.9.0/openlogi-v0.9.0-linux-amd64.rpm
 
 # install packages from fedora repos
 dnf5 install -y \
