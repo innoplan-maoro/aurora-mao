@@ -25,6 +25,9 @@ rpm --import https://linux.teamviewer.com/pubkey/currentkey.asc && \
 dnf5 install -y https://download.teamviewer.com/download/linux/teamviewer.x86_64.rpm && \
 /usr/sbin/teamviewer daemon enable
 
+# OpenLogi
+dnf5 install -y https://github.com/AprilNEA/OpenLogi/releases/download/v0.9.0/openlogi-v0.9.0-linux-amd64.rpm
+
 # install packages from fedora repos
 dnf5 install -y \
     krdc \
